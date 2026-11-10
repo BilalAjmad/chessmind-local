@@ -1,0 +1,66 @@
+# ─── electron-builder — one command, installers for every desktop OS ─────────
+#   Windows : NSIS one-click installer (installs itself + desktop shortcut)
+#   macOS   : .dmg (drag to Applications)
+#   Linux   : .AppImage + .deb
+#
+# Build locally:  bun run electron:dist
+# In CI (release.yml) the web build is restored into out/ first.
+
+appId: app.chessmind.local
+productName: ChessMind Local
+copyright: Copyright © 2026 ChessMind Local
+
+directories:
+  output: dist-electron
+  buildResources: build
+
+# only the shell + the static site — no node_modules needed inside the app
+files:
+  - electron/**
+  - out/**
+  - package.json
+
+asar: true
+compression: maximum
+
+win:
+  icon: build/icon.png
+  target:
+    - target: nsis
+      arch: [x64, arm64]
+  artifactName: ChessMind-Local-Setup-${version}-${arch}.${ext}
+
+nsis:
+  # "download → double-click → it installs itself and puts a shortcut
+  #  on the desktop" — exactly the one-tap setup we want
+  oneClick: true
+  perMachine: false
+  shortcutName: ChessMind Local
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  deleteAppDataOnUninstall: false
+
+mac:
+  icon: build/icon.png
+  category: public.app-category.games
+  identity: null          # no Apple Developer certificate required
+  darkModeSupport: true
+  target:
+    - target: dmg
+      arch: [x64, arm64]
+  artifactName: ChessMind-Local-${version}-${arch}.${ext}
+
+linux:
+  icon: build/icon.png
+  category: Game
+  maintainer: ChessMind Local
+  target:
+    - target: AppImage
+      arch: [x64, arm64]
+    - target: deb
+      arch: [x64]
+  artifactName: ChessMind-Local-${version}-${arch}.${ext}
+  desktop:
+    entry:
+      Comment: Offline chess vs a real built-in AI engine
+      Keywords: chess;game;engine;board;

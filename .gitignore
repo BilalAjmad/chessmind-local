@@ -1,0 +1,24 @@
+# dependencies
+node_modules/
+
+# build output
+.next/
+out/
+dist-electron/
+dist/
+android/
+.dev/
+
+# misc
+*.log
+dev.log
+server.log
+.DS_Store
+*.tsbuildinfo
+next-env.d.ts
+.env*
+!.env.example
+
+# agent tooling artifacts (not part of the game)
+tool-results/
+download/
