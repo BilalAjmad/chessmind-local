@@ -35,9 +35,9 @@ Play against **ChessMind** (4 difficulty levels, ~800–2500 Elo) or pass & play
 | **Linux** | `ChessMind-Local-x.x.x-x86_64.AppImage` or `...amd64.deb` | AppImage: `chmod +x` → double-click. Deb: `sudo apt install ./ChessMind-Local-*.deb`. |
 | **Android** | `ChessMind-Local-x.x.x.apk` | Open file → Allow "Install unknown apps" → **Icon lands on home screen**. Fully offline. |
 | **iPhone / iPad** | Install the web app | Open hosted version in Safari → Share → **Add to Home Screen** → Full-screen, offline. |
-| **Any Browser** | [Play Online](https://your-username.github.io/chessmind-local) | No install needed. Works offline after first load (PWA). |
+| **Any Browser** | [Play Online](https://bilalajmad.github.io/chessmind-local) | **Play instantly in browser** — no install, works offline after first load (PWA). |
 
-> **All installers are built automatically on every release via GitHub Actions.** Go to [Releases](../../releases) for the latest files.
+> **All installers (Windows, macOS, Linux, Android) are built automatically on every release.** → **[View all releases →](../../releases)**
 
 ---
 
@@ -193,16 +193,6 @@ bun run scripts/perft.ts       # Move generation correctness (perft)
 ---
 
 ## 🚀 Publish Anywhere — Free & Automatic
-
-### 🌐 Web (Easiest — 2 Minutes)
-| Platform | Steps |
-|----------|-------|
-| **Vercel** (recommended) | Import repo → Build: `bun run build`, Output: `out` → Deploy |
-| **Netlify** | Add site → Build: `bun run build`, Publish: `out` |
-| **GitHub Pages** | Settings → Pages → GitHub Actions (workflow included) |
-| **Any static host** | `bun run build` → upload `out/` folder |
-
-**Mobile users can then install as PWA:** Chrome ⋮ → "Install app" / Safari Share → "Add to Home Screen"
 
 ### 🖥️ Desktop Installers (Windows/macOS/Linux)
 ```bash
