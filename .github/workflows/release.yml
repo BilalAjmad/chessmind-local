@@ -44,7 +44,7 @@ jobs:
         run: bunx electron-builder --config electron-builder.yml --publish never
         env:
           # Electron download mirror keeps CI stable
-          ELECTRON_MIRROR: "https://github.com/electron/electron/releases/download/v"
+          ELECTRON_MIRROR: "https://github.com/electron/electron/releases/download/"
       - name: Upload installers
         uses: actions/upload-artifact@v4
         with:
