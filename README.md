@@ -18,12 +18,10 @@ Play against **ChessMind** (4 difficulty levels, ~800–2500 Elo) or pass & play
 ## 🎬 See It In Action
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/chessmind-demo.gif" alt="ChessMind Local Demo" width="800"/>
+  <img src="chessmind-demo.gif" alt="ChessMind Local Demo" width="800"/>
   <br/>
   <em>Real gameplay: AI thinking, eval bar, move classification, adaptive learning, PGN export</em>
 </p>
-
-> **Note:** The demo GIF above is a placeholder. Replace `chessmind-demo.gif` with an actual recording of the app in action (see [Contributing](#-contributing)).
 
 ---
 
