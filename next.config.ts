@@ -1,15 +1,14 @@
 import type { NextConfig } from "next";
 
-// Fully static export — the whole game is one self-contained folder (out/).
-// That folder is what gets:
-//   • zipped into the Electron desktop apps (Windows / macOS / Linux)
-//   • synced into an Android app via Capacitor
-//   • deployed to any static host (Vercel, Netlify, GitHub Pages) as a PWA
+const isGitHubPages = process.env.GITHUB_PAGES === 'true';
+
 const nextConfig: NextConfig = {
   output: "export",
   trailingSlash: true,
   images: { unoptimized: true },
   reactStrictMode: false,
+  basePath: isGitHubPages ? '/chessmind-local' : '',
+  assetPrefix: isGitHubPages ? '/chessmind-local/' : '',
 };
 
 export default nextConfig;

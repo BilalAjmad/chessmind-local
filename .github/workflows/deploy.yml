@@ -22,6 +22,8 @@ jobs:
       - uses: oven-sh/setup-bun@v2
       - run: bun install
       - run: bun run build
+        env:
+          GITHUB_PAGES: 'true'
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
